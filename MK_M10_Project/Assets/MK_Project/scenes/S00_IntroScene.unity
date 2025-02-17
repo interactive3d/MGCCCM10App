@@ -240,7 +240,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 57094593}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: a61211e15fcc59d499350bb077cb4e6f, type: 3}
+  m_VideoClip: {fileID: 0}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -1005,13 +1005,14 @@ GameObject:
   - component: {fileID: 1087450125}
   - component: {fileID: 1087450124}
   - component: {fileID: 1087450123}
+  - component: {fileID: 1087450126}
   m_Layer: 5
   m_Name: Panel_02_Video
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1087450122
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1047,6 +1048,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoDisplay: {fileID: 57094596}
   videoPlayer: {fileID: 57094595}
+  uiButton: {fileID: 1282316288}
   videoFileName: mgccc_gobig.mp4
 --- !u!114 &1087450124
 MonoBehaviour:
@@ -1086,6 +1088,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1087450121}
   m_CullTransparentMesh: 1
+--- !u!114 &1087450126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087450121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c9e33f633254ca4ebe793ab18596b91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1160234425
 GameObject:
   m_ObjectHideFlags: 0
@@ -1148,7 +1162,7 @@ GameObject:
   - component: {fileID: 1282316289}
   - component: {fileID: 1282316288}
   m_Layer: 5
-  m_Name: label_loading (1)
+  m_Name: label_loadTheScene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1220,6 +1234,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1087450123}
         m_TargetAssemblyTypeName: VideoPlayerController, Assembly-CSharp
         m_MethodName: StopVideo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1087450126}
+        m_TargetAssemblyTypeName: S00_Panel2_Controller, Assembly-CSharp
+        m_MethodName: ChangeTheScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1452,6 +1478,103 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1496454835
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1496454837}
+  - component: {fileID: 1496454836}
+  m_Layer: 0
+  m_Name: MainSceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1496454836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496454835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e17ce3834bfc5d4682e80af71fc1f56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiPanels:
+  - {fileID: 1761823883}
+  - {fileID: 1087450121}
+  panelEvents:
+  - onPanelStart:
+      m_PersistentCalls:
+        m_Calls: []
+    onPanelEnd:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1368515602}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: StopBackgroundMusic
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - onPanelStart:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1087450123}
+          m_TargetAssemblyTypeName: VideoPlayerController, Assembly-CSharp
+          m_MethodName: PlayVideo
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    onPanelEnd:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1368515602}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: PlayBackgroundMusic
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 1072563398c573e4fadd1439a9edf8a3, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  switchTime: 5
+--- !u!4 &1496454837
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496454835}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1761823883
 GameObject:
   m_ObjectHideFlags: 0
@@ -1604,3 +1727,4 @@ SceneRoots:
   - {fileID: 524980537}
   - {fileID: 1388641217}
   - {fileID: 1368515603}
+  - {fileID: 1496454837}
