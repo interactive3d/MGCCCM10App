@@ -39,10 +39,11 @@ public class VideoPlayerController : MonoBehaviour {
     public void PlayVideo() {
         if (videoPlayer.isPrepared) {
             videoPlayer.Play();
-            StartCoroutine(ShowButtonAfterDelay(5f)); // Start coroutine
+            
         } else {
             Debug.LogError("Video is not prepared yet!");
         }
+        StartCoroutine(ShowButtonAfterDelay(5f)); // Start coroutine
     }
 
     // Stop the video
