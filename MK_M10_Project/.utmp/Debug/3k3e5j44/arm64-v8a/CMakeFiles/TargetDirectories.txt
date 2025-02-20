@@ -1,0 +1,5 @@
+D:/GitHub/MGCCCM10App/MK_M10_Project/.utmp/Debug/3k3e5j44/arm64-v8a/CMakeFiles/edit_cache.dir
+D:/GitHub/MGCCCM10App/MK_M10_Project/.utmp/Debug/3k3e5j44/arm64-v8a/CMakeFiles/rebuild_cache.dir
+D:/GitHub/MGCCCM10App/MK_M10_Project/.utmp/Debug/3k3e5j44/arm64-v8a/GameActivity/CMakeFiles/game.dir
+D:/GitHub/MGCCCM10App/MK_M10_Project/.utmp/Debug/3k3e5j44/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+D:/GitHub/MGCCCM10App/MK_M10_Project/.utmp/Debug/3k3e5j44/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir
